@@ -46,6 +46,9 @@ async def on_cleanup(app: web.Application):
 def main():
     app = web.Application()
 
+    def main():
+    app = web.Application()
+
     # Подключаем aiogram к aiohttp
     SimpleRequestHandler(dispatcher=dp, bot=bot).register(app, path=WEBHOOK_PATH)
     setup_application(app, dp, bot=bot)
@@ -58,7 +61,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-
-
