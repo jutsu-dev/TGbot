@@ -130,8 +130,10 @@ async def admin_panel(message: Message):
 # WEBHOOK SERVER
 # =========================
 async def on_startup(app: web.Application):
-    await bot.set_webhook(WEBHOOK_URL, drop_pending_updates=True)
-    logging.info(f"🚀 Webhook установлен: {WEBHOOK_URL}")
+    webhook_url = f"{BASE_URL}{WEBHOOK_PATH}"   # например https://tgbot-4h6c.onrender.com/webhook
+    await bot.set_webhook(webhook_url)
+    logging.info(f"🚀 Webhook установлен: {webhook_url}")
+
 
 async def on_shutdown(app: web.Application):
     await bot.delete_webhook()
